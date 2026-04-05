@@ -1,11 +1,11 @@
-# CGECD: Correlation Graph Eigenvalue Crisis Detector
+# ORCA — Online Regime Correlation Analyzer
 
 **Detecting Financial Market Crises via Spectral Analysis of Dynamic Correlation Networks**
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Abstract.** We propose CGECD, a framework that exploits spectral properties of dynamic asset correlation networks to detect extreme tail events in equity markets. By extracting eigenvalue-based features from rolling correlation matrices — including absorption ratios, spectral entropy, effective rank, and Marchenko-Pastur excess — we capture structural regime shifts that precede crises and rallies at a 10-day horizon. On 15 years of daily US market data with walk-forward validation, CGECD achieves a Balanced Crisis Detection AUC (BCD-AUC) of **0.741**, ranking first against five competitive baselines including HAR-RV, GARCH, and turbulence-based methods. Ablation studies confirm that spectral features contribute +5.2% AUC for rally detection and +10.3% AUC for crash detection over traditional volatility features alone. A backtested ensemble walk-forward strategy translates these signals into a **Sharpe ratio of 1.13** with 15.6% CAGR and only -7.5% maximum drawdown.
+> **Abstract.** We propose ORCA, a framework that exploits spectral properties of dynamic asset correlation networks to detect extreme tail events in equity markets. By extracting eigenvalue-based features from rolling correlation matrices — including absorption ratios, spectral entropy, effective rank, and Marchenko-Pastur excess — we capture structural regime shifts that precede crises and rallies at a 10-day horizon. On 15 years of daily US market data with walk-forward validation, ORCA achieves a Balanced Crisis Detection AUC (BCD-AUC) of **0.741**, ranking first against five competitive baselines including HAR-RV, GARCH, and turbulence-based methods. Ablation studies confirm that spectral features contribute +5.2% AUC for rally detection and +10.3% AUC for crash detection over traditional volatility features alone. A backtested ensemble walk-forward strategy translates these signals into a **Sharpe ratio of 1.13** with 15.6% CAGR and only -7.5% maximum drawdown.
 
 ---
 
@@ -15,7 +15,7 @@
 
 | Model | Rally AUC | Crash AUC | BCD-AUC | # Features |
 |:------|:---------:|:---------:|:-------:|:----------:|
-| **CGECD Combined (Ours)** | **0.772** | 0.711 | **0.741** | 206 |
+| **ORCA Combined (Ours)** | **0.772** | 0.711 | **0.741** | 206 |
 | HAR-RV (Corsi, 2009) | 0.696 | **0.763** | 0.729 | 4 |
 | SMA Volatility | 0.682 | 0.671 | 0.676 | 9 |
 | Traditional RF | 0.736 | 0.608 | 0.669 | 27 |
@@ -117,7 +117,7 @@ Spectral features provide substantial gains, especially for crash detection:
 |:-----------|:---------:|:---------:|:--------------------:|
 | Traditional only | 0.736 | 0.608 | baseline |
 | Spectral only | 0.620 | 0.666 | -0.116 / +0.058 |
-| **Combined (CGECD)** | **0.772** | **0.711** | **+0.036 / +0.103** |
+| **Combined (ORCA)** | **0.772** | **0.711** | **+0.036 / +0.103** |
 
 The spectral contribution for crash detection (+10.3% AUC) indicates that correlation network structure contains crisis precursors absent from price-based volatility features.
 
@@ -140,8 +140,8 @@ The spectral contribution for crash detection (+10.3% AUC) indicates that correl
 ### Installation
 
 ```bash
-git clone https://github.com/BorisKriuk/RALEC-GNN.git
-cd RALEC-GNN
+git clone https://github.com/BorisKriuk/ORCA.git
+cd ORCA
 pip install -r requirements.txt
 ```
 
@@ -221,7 +221,7 @@ If you use this code in your research, please cite:
 
 ```bibtex
 @inproceedings{kriuk2026cgecd,
-  title={CGECD: Correlation Graph Eigenvalue Crisis Detector},
+  title={ORCA: Online Regime Correlation Analyzer},
   author={Kriuk, Boris and Kriuk, Fedor},
   year={2026}
 }
