@@ -220,7 +220,7 @@ Full pinned versions in `requirements.txt`.
 If you use this code in your research, please cite:
 
 ```bibtex
-@inproceedings{kriuk2026cgecd,
+@inproceedings{kriuk2026orca,
   title={ORCA: Online Regime Correlation Analyzer},
   author={Kriuk, Boris and Kriuk, Fedor},
   year={2026}
