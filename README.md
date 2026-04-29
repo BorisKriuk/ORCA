@@ -186,7 +186,7 @@ python visualization_server.py
 ## 8. Project Structure
 
 ```
-RALEC-GNN/
+ORCA/
 ├── algorithm.py            # Core CGECD: spectral feature extraction, model, walk-forward
 ├── run.py                  # Two-task classification experiment runner
 ├── backtesting.py          # 10 trading strategies with ensemble WFO
